@@ -58,7 +58,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
         .generate()
         .expect("Unable to generate bindings")
-        .write_to_file("src/bindings.rs")
+        .write_to_file(concat!(env!("OUT_DIR"), "/bindings.rs"))
         .expect("Couldn't write bindings");
 
     Ok(())
