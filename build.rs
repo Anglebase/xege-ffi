@@ -1,4 +1,5 @@
 use std::fs;
+use std::path::PathBuf;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let files = fs::read_dir("zlib/src")?
@@ -53,12 +54,14 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .files(files)
         .compile("xege");
 
+    let out_dir = PathBuf::from(std::env::var("OUT_DIR").unwrap());
+
     bindgen::Builder::default()
         .header("xege/include/ege.cpp")
         .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
         .generate()
         .expect("Unable to generate bindings")
-        .write_to_file(concat!(env!("OUT_DIR"), "/bindings.rs"))
+        .write_to_file(out_dir.join("bindings.rs"))
         .expect("Couldn't write bindings");
 
     Ok(())
