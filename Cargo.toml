@@ -2,12 +2,9 @@
 name = "xege-ffi"
 version = "0.1.0"
 edition = "2024"
-
+description = "FFI bindings for xege library."
 build = "build.rs"
 
 [build-dependencies]
 cc = "1.2.31"
 bindgen = "0.72.0"
-
-[dependencies]
-
