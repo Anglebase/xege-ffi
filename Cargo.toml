@@ -1,15 +1,10 @@
 [package]
 name = "xege-ffi"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2024"
 categories = ["external-ffi-bindings", "game-development", "graphics", "gui", "rendering::graphics-api"]
 documentation = "https://xege.org/manual/api/index.htm"
 description = "FFI bindings for xege library."
 license = "MIT"
 homepage = "https://xege.org/"
-build = "build.rs"
 repository = "https://github.com/Anglebase/xege-ffi.git"
-
-[build-dependencies]
-cc = "1.2.31"
-bindgen = "0.72.0"
