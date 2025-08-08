@@ -54,15 +54,15 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .files(files)
         .compile("xege");
 
-    let out_dir = PathBuf::from(std::env::var("OUT_DIR").unwrap());
+    // let out_dir = PathBuf::from(std::env::var("OUT_DIR").unwrap());
 
-    bindgen::Builder::default()
-        .header("xege/include/ege.cpp")
-        .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
-        .generate()
-        .expect("Unable to generate bindings")
-        .write_to_file(out_dir.join("bindings.rs"))
-        .expect("Couldn't write bindings");
+    // bindgen::Builder::default()
+    //     .header("xege/include/ege.cpp")
+    //     .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
+    //     .generate()
+    //     .expect("Unable to generate bindings")
+    //     .write_to_file(out_dir.join("bindings.rs"))
+    //     .expect("Couldn't write bindings");
 
     Ok(())
 }
