@@ -1,6 +1,6 @@
 [package]
 name = "xege-ffi"
-version = "0.1.3"
+version = "0.1.4"
 edition = "2024"
 categories = ["external-ffi-bindings", "game-development", "graphics", "gui", "rendering::graphics-api"]
 documentation = "https://xege.org/manual/api/index.htm"
@@ -12,3 +12,11 @@ repository = "https://github.com/Anglebase/xege-ffi.git"
 
 [build-dependencies]
 cc = "1.2.32"
+
+[package.metadata.docs.rs]
+default-target = "x86_64-pc-windows-msvc"
+targets = [
+    "aarch64-pc-windows-msvc",
+    "i686-pc-windows-msvc",
+    "x86_64-pc-windows-msvc",
+]
